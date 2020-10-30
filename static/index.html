@@ -6,9 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <button id ="btn">test</button>
+    <form action ="/xml_create" method="POST">
+        <select name="traffic_light">
+            <option value="">신호등 선택</option>
+            <option value="1">1번 신호등</option>
+            <option value="2">2번 신호등</option>
+            <option value="3">3번 신호등</option>
+        </select>
+        초<input type = "text" name="input_sec" size="20">
+         <button id ="btn">test</button>
 
-    <script type="text/javascript" src="create.js"></script>
-
+    <!-- <script type="text/javascript" src="create.js"></script> -->
+    </form>
 </body>
 </html>

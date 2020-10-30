@@ -1,4 +1,5 @@
 const http = require("http");
+const fs = require("fs");
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
@@ -17,9 +18,26 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, ".static/index.html"));
 });
 
-app.get("/xml_create",(req,res) => {
+let title_num = 1;
+app.post("/xml_create",(req,res) => { //
   console.log("oh index.js");
-  res.send({ name: 'Minsu' });
+  var sec = req.body.input_sec;
+  var light = req.body.traffic_light;
+  console.log(sec);
+  console.log(light);
+  // var num1 = 1;
+  // var num2 = 2;
+  
+  var title = `test${title_num}.xml`
+  var des = `<?xml version="1.0"?>\n<control>\n\t<edgeNo>1</edgeNo>\n\t<traffic_light>${light}</traffic_light>\n\t<how_many>${sec}</how_many>\n\t<occasion>NA</occasion>\n</control>`;
+  fs.writeFile('data/' + title, des, (err) => {
+    if(err){
+        console.log(err);
+        res.status(500).send('Internal Server Error');
+    }
+  });
+  title_num ++;
+   res.send({msg :'성공!'});
 
 });//xml 파일 생성
 
