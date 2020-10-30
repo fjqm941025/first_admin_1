@@ -23,13 +23,15 @@ app.post("/xml_create",(req,res) => { //
   console.log("oh index.js");
   var sec = req.body.input_sec;
   var light = req.body.traffic_light;
+  var edge = req.body.edgeNO;
+  var occ = req.body.occasion;
   console.log(sec);
   console.log(light);
   // var num1 = 1;
   // var num2 = 2;
   
   var title = `test${title_num}.xml`
-  var des = `<?xml version="1.0"?>\n<control>\n\t<edgeNo>1</edgeNo>\n\t<traffic_light>${light}</traffic_light>\n\t<how_many>${sec}</how_many>\n\t<occasion>NA</occasion>\n</control>`;
+  var des = `<?xml version="1.0"?>\n<control>\n\t<edgeNo>${edge}</edgeNo>\n\t<traffic_light>${light}</traffic_light>\n\t<how_many>${sec}</how_many>\n\t<occasion>${occ}</occasion>\n</control>`;
   fs.writeFile('./data/' + title, des, (err) => {
     if(err){
         console.log(err);
