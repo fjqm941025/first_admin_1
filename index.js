@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());//CORS 헤더를 알아서 사용해줌
 app.use(express.static("static"));//정적파일이 PUBLIC 폴더에 있음
 
-const PORT = 8080;
+const PORT = 80;
 const hostname = "http://13.209.12.175";
 // TODO 정적파일 반환 편하게하기
 
