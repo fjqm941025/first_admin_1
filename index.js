@@ -30,7 +30,7 @@ app.post("/xml_create",(req,res) => { //
   
   var title = `test${title_num}.xml`
   var des = `<?xml version="1.0"?>\n<control>\n\t<edgeNo>1</edgeNo>\n\t<traffic_light>${light}</traffic_light>\n\t<how_many>${sec}</how_many>\n\t<occasion>NA</occasion>\n</control>`;
-  fs.writeFile('data/' + title, des, (err) => {
+  fs.writeFile('./data/' + title, des, (err) => {
     if(err){
         console.log(err);
         res.status(500).send('Internal Server Error');
