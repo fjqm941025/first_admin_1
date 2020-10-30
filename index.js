@@ -25,6 +25,6 @@ app.get("/", (req, res) => {
 //   res.send("2post!");
 // });
 
-app.listen(PORT, hostname, () => {
+app.listen(PORT, () => {
   console.log(`listening on ${PORT}.....`);//''사이에 ${}넣으면 변수도 출력할 수 잇음
 });
