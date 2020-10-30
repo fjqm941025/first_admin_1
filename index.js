@@ -22,6 +22,7 @@ let title_num = 1;
 app.post("/xml_create",(req,res) => { //
   console.log("oh index.js");
   var sec = req.body.input_sec;
+  
   var light = req.body.traffic_light;
   var edge = req.body.edgeNO;
   var occ = req.body.occasion;
